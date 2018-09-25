@@ -38,7 +38,7 @@ describe('calculator', () => {
 	})
 
 	it('incorrect count open brackets', () => {
-		should(() => calculator('(2323+(2*932-4)')).throw('invalid expression');
+		should(() => calculator('(2323+(2*932-4)')).throw('incorrect sequence of brackets');
 	})
 
 	it('random bracket', () => {

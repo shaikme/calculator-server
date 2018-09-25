@@ -4,7 +4,8 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "npx mocha"
+    "test": "npx mocha",
+    "start": "node app.js"
   },
   "devDependencies": {
     "eslint": "^5.0.1",

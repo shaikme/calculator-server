@@ -73,7 +73,9 @@ const calculateOperation = (operandStack, operatorStack) => {
 	const firstOperand = operandStack.pop();
 	const operator = operatorStack.pop();
 
-	if (operator === '(' || !firstOperand || !secondOperand) throw new Error('invalid expression');
+	if (operator === '(') throw new Error('incorrect sequence of brackets');
+    if (typeof firstOperand === 'undefined'
+        || typeof secondOperand === 'undefined') throw new Error('invalid expression');
 
 	const result = operations[operator].action(firstOperand, secondOperand);
 	operandStack.push(result);
