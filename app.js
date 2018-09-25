@@ -12,7 +12,8 @@ const server = new Server((req, res) => {
 		res.setHeader('Access-Control-Allow-Origin', '*');
 
 		try {
-			const result = calculator(decodeURI(queryData.query));
+			const string = Buffer.from(decodeURI(queryData.query), 'base64').toString('utf8');
+			const result = calculator(string);
 			res.statusCode = 200;
 			res.end(JSON.stringify({
 				error: false,

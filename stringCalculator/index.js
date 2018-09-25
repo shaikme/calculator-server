@@ -50,7 +50,7 @@ const checkPriorityAndCalculate = (currentOperator, operandStack, operatorStack)
 	const lastOperator = operatorStack[operatorStack.length - 1];
 
 	if (!lastOperator || lastOperator === '(' || currentOperator === '('
-        || operations[currentOperator].priority > operations[lastOperator].priority) return operatorStack.push(currentOperator);
+		|| operations[currentOperator].priority > operations[lastOperator].priority) return operatorStack.push(currentOperator);
 
 	calculateOperation(operandStack, operatorStack);
 
@@ -74,8 +74,8 @@ const calculateOperation = (operandStack, operatorStack) => {
 	const operator = operatorStack.pop();
 
 	if (operator === '(') throw new Error('incorrect sequence of brackets');
-    if (typeof firstOperand === 'undefined'
-        || typeof secondOperand === 'undefined') throw new Error('invalid expression');
+	if (typeof firstOperand === 'undefined'
+		|| typeof secondOperand === 'undefined') throw new Error('invalid expression');
 
 	const result = operations[operator].action(firstOperand, secondOperand);
 	operandStack.push(result);
